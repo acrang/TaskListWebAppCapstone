@@ -1,0 +1,13 @@
+﻿@model List<TodoItem>
+<a asp-action="AddTask" asp-controller="TaskList">Add a new Task</a>
+<hr />
+@foreach (TodoItem t in Model)
+{
+    <p>Task Description: @t.Description</p>
+    <p>Due Date: @t.DueDate</p>
+    <p>Completion Status: @t.Complete</p>
+
+    <a asp-action="UpdateTask" asp-controller="TaskList" asp-route-id="@t.Id">Update this Task</a>
+    <form asp-action="DeleteTask" asp-controller="TaskList" asp-route-id="@t.Id"><input type="submit" value="DeleteTask" /></form>
+    <hr />
+}

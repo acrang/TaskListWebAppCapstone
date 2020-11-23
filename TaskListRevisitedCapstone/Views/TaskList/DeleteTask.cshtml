@@ -1,0 +1,17 @@
+﻿@model TodoItem
+
+<p>Task Description: @Model.Description</p>
+<p>Due Date: @Model.DueDate</p>
+<p>Completion Status: @Model.Complete</p>
+
+<p>Are you sure you wish to delete this task?</p>
+
+<form asp-action="DeleteTask" asp-controller="TaskList" method="post">
+    <input hidden name="Description" value="@Model.Description" />
+    <input hidden name="DueDate" value="@Model.DueDate" />
+    <input hidden name="Complete" value="@Model.Complete" />
+
+    <input type="button" value="Yes" />
+</form>
+
+<a asp-action="Index" asp-controller="TaskList">No</a>

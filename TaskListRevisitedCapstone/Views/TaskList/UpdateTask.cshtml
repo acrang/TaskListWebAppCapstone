@@ -1,0 +1,14 @@
+﻿@model TodoItem
+
+<h1>Update Task</h1>
+
+<form method="post">
+    <input type="text" name="Description" value="@Model.Description" />
+    <input type="date" name="DueDate" value="@Model.DueDate" />
+
+    <br />
+
+    <p>Mark as complete</p><input type="checkbox" name="Complete" />
+
+    <input type="submit" value="Update Task" />
+</form>
